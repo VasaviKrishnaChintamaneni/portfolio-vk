@@ -1,0 +1,6 @@
+{/* Background split & diagonal overlay */}
+            <div className="absolute inset-0 z-0 grid grid-cols-2">
+                <div className="bg-secondary" />
+                <div />
+            </div>
+            <div className="absolute inset-0 z-0 transform skew-x-[-10deg] bg-gradient-to-r from-secondary/60 to-primary/60 opacity-30" />
