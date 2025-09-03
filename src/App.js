@@ -13,7 +13,7 @@ import Skills from './pages/Skills';
 
 function App() {
   return (
-    <Router>
+    <Router basename="/portfolio-vk">
       <div className="flex flex-col font-sans bg-secondary min-h-screen">
         <Navbar />
         <main className="flex-grow">
