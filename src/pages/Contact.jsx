@@ -58,46 +58,55 @@ const Contact = () => {
     return (
         <section
             id="contact"
-            className="bg-gradient-to-br from-pink-100 via-blue-100 to-purple-100 text-primary min-h-screen px-8 py-6 pb-10 flex items-center justify-center"
+            className="bg-gradient-to-br from-pink-100 via-blue-100 to-purple-100 text-primary min-h-screen px-8 py-6 pb-32"
         >
-            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-6 h-[90vh] items-stretch">
-                <div className="flex flex-col justify-center items-center w-full h-full px-2 md:px-4 lg:px-6" data-aos="fade-right">
+            <div className="w-full max-w-7xl mx-auto grid md:grid-cols-2 gap-6 items-stretch">
+                <div className="flex flex-col justify-start items-center w-full px-2 md:px-4 lg:px-6" data-aos="fade-right">
                     <div className="grid grid-cols-2 gap-4 w-full h-full md:max-w-[90%]">
+
+                        {/* Open to Opportunities - Full Width Card */}
+                        <div className="col-span-2 flex flex-col items-center justify-center p-6 md:p-8 border border-gray-200 shadow-md rounded-lg w-full bg-white hover:shadow-xl hover:bg-indigo-50 transition duration-300">
+
+                            <HiOutlineAcademicCap size={40} className="text-blue-900 mb-3" />
+
+                            <h4 className="text-lg md:text-xl font-bold text-[#24477a] text-center">
+                                Open to Opportunities
+                            </h4>
+
+                            <p className="mt-2 text-center text-sm md:text-base font-semibold text-gray-700">
+                                Data Analyst • Data Engineer • Applied Data Scientist
+                            </p>
+
+                            <p className="mt-3 text-center text-xs md:text-sm text-gray-600 leading-relaxed max-w-lg">
+                                Exploring roles where analytics, engineering, and storytelling intersect to drive meaningful business impact.
+                            </p>
+
+                        </div>
 
                         {/* Stat 1 */}
                         <div className="flex flex-col items-center justify-center p-2 md:p-3 border border-gray-200 shadow-md rounded-lg w-full aspect-square bg-white hover:shadow-xl hover:bg-blue-50 transition duration-300">
                             <HiOutlineUserGroup size={36} className="text-blue-900 mb-2 group-hover:text-indigo-700 transition" />
                             <p className="text-center text-xs md:text-sm font-semibold text-gray-500 leading-snug group-hover:text-blue-800">
-                                3+ Years in<br />Data & Analytics
-                            </p>
-                        </div>
-
-                        {/* Stat 2 */}
-                        <div className="flex flex-col items-center justify-center p-2 md:p-3 border border-gray-200 shadow-md rounded-lg w-full aspect-square bg-white hover:shadow-xl hover:bg-blue-50 transition duration-300">
+                                4+ Years in<br />Data & Analytics
+                            </p><br />
                             <HiOutlineChartBar size={36} className="text-blue-900 mb-2 group-hover:text-blue-700 transition" />
                             <p className="text-center text-xs md:text-sm font-semibold text-gray-500 leading-snug group-hover:text-blue-800">
                                 10+ Dashboards<br />Built
                             </p>
                         </div>
 
-                        {/* Stat 3 */}
-                        <div className="flex flex-col items-center justify-center p-2 md:p-3 border border-gray-200 shadow-md rounded-lg w-full aspect-square bg-white hover:shadow-xl hover:bg-purple-50 transition duration-300">
-                            <HiOutlineCode size={36} className="text-blue-900 mb-2 group-hover:text-purple-700 transition" />
-                            <p className="text-center text-xs md:text-sm font-semibold text-gray-500 leading-snug group-hover:text-blue-800">
-                                Tech Stack:<br />Python | SQL | Power BI
-                            </p>
-                        </div>
-
-                        {/* Stat 4 - IEEE Research */}
-                        <div className="flex flex-col items-center justify-center p-2 md:p-3 border border-gray-200 shadow-md rounded-lg w-full aspect-square bg-white hover:shadow-xl hover:bg-indigo-50 transition duration-300">
+                        {/* Stat 2 */}
+                        <div className="flex flex-col items-center justify-center p-2 md:p-3 border border-gray-200 shadow-md rounded-lg w-full aspect-square bg-white hover:shadow-xl hover:bg-blue-50 transition duration-300">
                             <HiOutlineAcademicCap size={36} className="text-blue-900 mb-2 group-hover:text-indigo-700 transition" />
                             <p className="text-center text-xs md:text-sm font-semibold text-gray-500 leading-snug group-hover:text-blue-800">
                                 Co-authored a conference paper at IEEE AIB Things 2024 on<br />
                                 <span className="text-gray-500"><b>Retinal Disease Classification</b></span>
+                            </p> <br />
+                            <HiOutlineCode size={36} className="text-blue-900 mb-2 group-hover:text-purple-700 transition" />
+                            <p className="text-center text-xs md:text-sm font-semibold text-gray-500 leading-snug group-hover:text-blue-800">
+                                Tech Stack:<br />Python | SQL | Spark | Azure | AWS | DBT and Airflow.
                             </p>
                         </div>
-
-
                     </div>
                 </div>
 
@@ -107,7 +116,7 @@ const Contact = () => {
 
 
                 {/* RIGHT: Contact Form */}
-                <div data-aos="fade-left" className="flex flex-col justify-center items-center w-full h-full">
+                <div data-aos="fade-left" className="flex flex-col justify-start items-center w-full">
                     <h2 className="typewriter text-3xl text-blue-900 font-bold mb-4 text-center md:text-left">Let’s Connect!</h2>
                     <div className="w-full overflow-hidden mb-4">
                         <div className="h-1 bg-gradient-to-r from-blue-400 via-red to-accent animate-growLine"></div>
@@ -184,6 +193,11 @@ const Contact = () => {
 
                                 </button>
                             </div>
+                            {/* Response-time reassurance */}
+                            <p className="w-full text-center mt-2 text-xs text-gray-500">
+                                I typically respond within 24–48 hours.
+                            </p>
+
 
                         </form>
 
@@ -206,7 +220,7 @@ const Contact = () => {
 
             {/* Back to Top Button */}
             {showButton && (
-                <a aria-label="Back to top" href="#home"
+                <a aria-label="Back to top" href="#about"
                     className="fixed bottom-6 right-6 bg-gray-400 text-gray-800 p-2 rounded-full shadow-lg hover:bg-gray-800 transition duration-300"
                     title="Back to Top"
                 >
@@ -215,7 +229,7 @@ const Contact = () => {
             )}
 
             {/* Scroll Prompt (optional) */}
-            <div className="absolute bottom-2 left-2 transform -translate-x-1/2 animate-bounce text-purple-300 text-sm">
+            <div className="absolute bottom-4 left-1/2 transform -translate-x-1/2 animate-bounce text-purple-400 text-sm">
                 ↓ Scroll
             </div>
         </section>
