@@ -10,12 +10,12 @@ import certificate5 from "../Assets/Certifications/SEAccentureForageCertificatio
 /**
  * Professional portfolio-style Certifications page:
  * - 3-column grid on desktop
- * - Filter chips (All / AI & Data / Engineering / Tools)
- * - Issuer badges (acts like clean “logos” without adding new asset dependencies)
+ * - Filter chips (All / Generative AI & LLMs / ML & Data / Engineering)
+ * - Issuer badges (acts like clean "logos" without adding new asset dependencies)
  * - Modal: large preview + Verify link + Download (if local file)
  */
 
-const FILTERS = ["All", "AI & Data", "Engineering", "Tools"];
+const FILTERS = ["All", "Generative AI & LLMs", "ML & Data", "Engineering"];
 
 // Keep dates consistent: "Mon YYYY"
 const certifications = [
@@ -24,7 +24,7 @@ const certifications = [
     title: "AI Proficiency",
     issuer: "Credly",
     date: "Jul 2025",
-    category: "AI & Data",
+    category: "Generative AI & LLMs",
     url: "https://www.credly.com/badges/376c3063-cd8b-4c88-a2c8-0c15c38e99a1/linked_in_profile",
   },
   {
@@ -32,23 +32,23 @@ const certifications = [
     title: "AI Data Analyst Internship Certificate – Excelerate",
     issuer: "RIT",
     date: "Jul 2025",
-    category: "AI & Data",
+    category: "Generative AI & LLMs",
     file: certificate2,
   },
   {
     id: 3,
-    title: "Programming with JavaScript",
-    issuer: "Meta · Coursera",
-    date: "Jan 2024",
-    category: "Engineering",
-    url: "https://coursera.org/share/2a49391822e6914ff9bf86e760d8880c",
+    title: "Career Essentials in Data Analysis",
+    issuer: "Microsoft · LinkedIn",
+    date: "Jul 2025",
+    category: "ML & Data",
+    url: "https://www.linkedin.com/learning/certificates/5f3670793e9ca28b31a4aff6fd70a651ff09ae15dfa0e3f086d4b429b2c89e1c",
   },
   {
     id: 4,
     title: "Data Analytics and Visualization Job Simulation",
     issuer: "Accenture North America",
     date: "Apr 2025",
-    category: "AI & Data",
+    category: "ML & Data",
     file: certificate4,
   },
   {
@@ -61,22 +61,14 @@ const certifications = [
   },
   {
     id: 6,
-    title: "Java Developer",
-    issuer: "HackerRank",
-    date: "Oct 2020",
+    title: "Programming with JavaScript",
+    issuer: "Meta · Coursera",
+    date: "Jan 2024",
     category: "Engineering",
-    url: "https://www.hackerrank.com/certificates/c26a4627033b",
+    url: "https://coursera.org/share/2a49391822e6914ff9bf86e760d8880c",
   },
   {
     id: 7,
-    title: "Career Essentials in Data Analysis",
-    issuer: "Microsoft · LinkedIn",
-    date: "Jul 2025",
-    category: "AI & Data",
-    url: "https://www.linkedin.com/learning/certificates/5f3670793e9ca28b31a4aff6fd70a651ff09ae15dfa0e3f086d4b429b2c89e1c",
-  },
-  {
-    id: 8,
     title: "Version Control",
     issuer: "Meta · Coursera",
     date: "Jan 2024",
@@ -84,31 +76,43 @@ const certifications = [
     url: "https://coursera.org/share/219b1048aceee0fdefba743507418cad",
   },
   {
-    id: 9,
+    id: 8,
     title: "Excel Basics for Data Analysis",
     issuer: "IBM · Coursera",
     date: "Jan 2025",
-    category: "Tools",
+    category: "ML & Data",
     url: "https://coursera.org/share/219b1048aceee0fdefba743507418cad",
+  },
+  {
+    id: 9,
+    title: "Java Developer",
+    issuer: "HackerRank",
+    date: "Oct 2020",
+    category: "Engineering",
+    url: "https://www.hackerrank.com/certificates/c26a4627033b",
   },
 ];
 
-// Small “logo badge” generator (clean + consistent)
+// Small "logo badge" generator (clean + consistent)
 function issuerBadge(issuerRaw) {
   const issuer = (issuerRaw || "").toLowerCase();
 
-  // pick short label + color vibe
-  if (issuer.includes("credly")) return { label: "Credly", cls: "bg-emerald-600/90" };
-  if (issuer === "rit" || issuer.includes("rit")) return { label: "RIT", cls: "bg-orange-600/90" };
-  if (issuer.includes("meta")) return { label: "Meta", cls: "bg-sky-600/90" };
-  if (issuer.includes("coursera")) return { label: "Coursera", cls: "bg-blue-700/90" };
-  if (issuer.includes("accenture")) return { label: "Accenture", cls: "bg-violet-700/90" };
-  if (issuer.includes("hackerrank")) return { label: "HackerRank", cls: "bg-green-700/90" };
-  if (issuer.includes("microsoft")) return { label: "Microsoft", cls: "bg-indigo-700/90" };
-  if (issuer.includes("linkedin")) return { label: "LinkedIn", cls: "bg-blue-600/90" };
-  if (issuer.includes("ibm")) return { label: "IBM", cls: "bg-slate-700/90" };
+  if (issuer.includes("credly"))       return { label: "Credly",      cls: "bg-emerald-600/90" };
+  if (issuer.includes("rit"))          return { label: "RIT",          cls: "bg-orange-600/90" };
+  if (issuer.includes("meta"))         return { label: "Meta",         cls: "bg-sky-600/90" };
+  if (issuer.includes("coursera"))     return { label: "Coursera",     cls: "bg-blue-700/90" };
+  if (issuer.includes("accenture"))    return { label: "Accenture",    cls: "bg-violet-700/90" };
+  if (issuer.includes("hackerrank"))   return { label: "HackerRank",   cls: "bg-green-700/90" };
+  if (issuer.includes("microsoft"))    return { label: "Microsoft",    cls: "bg-indigo-700/90" };
+  if (issuer.includes("linkedin"))     return { label: "LinkedIn",     cls: "bg-blue-600/90" };
+  if (issuer.includes("ibm"))          return { label: "IBM",          cls: "bg-slate-700/90" };
+  // Ready for future certs — just add the issuer name to unlock the badge
+  if (issuer.includes("aws"))          return { label: "AWS",          cls: "bg-orange-500/90" };
+  if (issuer.includes("google"))       return { label: "Google",       cls: "bg-red-600/90" };
+  if (issuer.includes("deeplearning")) return { label: "DL.AI",        cls: "bg-teal-700/90" };
+  if (issuer.includes("cisco"))        return { label: "Cisco",        cls: "bg-cyan-700/90" };
+  if (issuer.includes("hugging face")) return { label: "HF",           cls: "bg-yellow-600/90" };
 
-  // fallback
   const fallback = issuerRaw?.split(/[·,]/)?.[0]?.trim() || "Cert";
   return { label: fallback.slice(0, 10), cls: "bg-gray-700/90" };
 }
@@ -197,7 +201,7 @@ const MyCertifications = () => {
                       </div>
                     )}
 
-                    {/* Issuer badge (acts like a logo) */}
+                    {/* Issuer badge */}
                     <div className="absolute top-3 left-3">
                       <span
                         className={[
@@ -255,7 +259,6 @@ const MyCertifications = () => {
                     )}
                   </div>
 
-                  {/* Small helper text */}
                   <p className="mt-3 text-xs text-gray-500">
                     {hasPreview ? "Preview image available" : "Verification link recommended"}
                   </p>
@@ -266,10 +269,10 @@ const MyCertifications = () => {
         </div>
       </div>
 
-      {/* Modal */}
+      {/* Modal — fixed overflow with max-h and scrollable wrapper */}
       {selectedCert && (
-        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 p-4">
-          <div className="w-full max-w-4xl rounded-2xl bg-white overflow-hidden shadow-2xl">
+        <div className="fixed inset-0 z-50 flex items-center justify-center bg-black/55 p-4 overflow-y-auto">
+          <div className="w-full max-w-2xl rounded-2xl bg-white overflow-hidden shadow-2xl my-auto">
             {/* Modal header */}
             <div className="flex items-start justify-between gap-4 p-5 border-b border-gray-200/70">
               <div>
@@ -295,7 +298,7 @@ const MyCertifications = () => {
                   <img
                     src={selectedCert.file}
                     alt={`${selectedCert.title} certificate`}
-                    className="w-full h-auto"
+                    className="w-full h-auto max-h-[60vh] object-contain"
                   />
                 ) : (
                   <div className="p-10 text-center text-gray-500">
@@ -336,7 +339,6 @@ const MyCertifications = () => {
                 </button>
               </div>
 
-              {/* Small note */}
               <p className="mt-3 text-xs text-gray-500">
                 Tip: For certifications without a preview image, add a screenshot or PDF in your Assets folder to enable preview + download.
               </p>
@@ -349,4 +351,3 @@ const MyCertifications = () => {
 };
 
 export default MyCertifications;
-

@@ -1,15 +1,10 @@
 import React, { useEffect, useState, useRef } from 'react';
 import { Typewriter } from 'react-simple-typewriter';
 import {
-    FaLinkedin, FaGithub, FaDownload, FaPython,
-    FaDatabase,
-    FaAws,
-    FaMicrosoft,
-    FaSnowflake,
-    FaJira,
-    FaCloud,
-    FaCogs,
-    FaChartBar,
+    FaLinkedin, FaGithub, FaDownload,
+    FaPython, FaAws, FaDocker, FaBrain,
+    FaDatabase, FaCloud, FaRobot, FaCogs,
+    FaNetworkWired,
 } from 'react-icons/fa';
 import Hero1 from '../Assets/ProfilePic/HeroPhoto1.jpg';
 import Hero2 from '../Assets/ProfilePic/HeroPhoto2.jpg';
@@ -28,21 +23,18 @@ const Home = () => {
     const [currentIndex, setCurrentIndex] = useState(0);
     const [techSlide, setTechSlide] = useState(0); // 0 = tech, 1 = video
     const introDrivePreviewSrc =
-        "https://drive.google.com/file/d/1-Z6w6Ud_FDNHKezeiUrRT04ai44Zg-es/preview";
-
-
-
+    "https://www.loom.com/embed/f4b27b7e88754a1b97c479a91fd5a9ba";
 
     const techStackSlide1 = [
         { icon: FaPython, label: "Python" },
-        { icon: FaDatabase, label: "SQL" },
-        { icon: FaCloud, label: "Apache Spark" },
-        { icon: FaCogs, label: "Airflow / ETL" },
-        { icon: FaMicrosoft, label: "Azure" },
-        { icon: FaAws, label: "AWS" },
-        { icon: FaSnowflake, label: "Snowflake" },
-        { icon: FaChartBar, label: "Power BI" },
-        { icon: FaJira, label: "Jira" },
+        { icon: FaBrain, label: "TensorFlow / PyTorch" },
+        { icon: FaRobot, label: "LangChain / RAG" },
+        { icon: FaCloud, label: "Hugging Face" },
+        { icon: FaAws, label: "AWS / GCP" },
+        { icon: FaDocker, label: "Docker" },
+        { icon: FaCogs, label: "Kubernetes" },
+        { icon: FaDatabase, label: "FAISS / Pinecone" },
+        { icon: FaNetworkWired, label: "MLflow" },
         { icon: FaGithub, label: "GitHub" },
     ];
 
@@ -128,7 +120,7 @@ const Home = () => {
                                     </p>
                                     {/* Resume Download Button */}
                                     <a
-                                        href="/Vasavi-Krishna-DE Final.pdf"
+                                        href="/Vasavi Krishna Chintamaneni Resume.pdf"
                                         download
                                         className="inline-flex items-center gap-2 bg-yellow-500 text-white font-medium px-5 py-2 rounded-full hover:bg-gray-700 transition"
                                     >
@@ -172,15 +164,18 @@ const Home = () => {
                                 </h5>
 
                                 <p className="text-gray-700 text-sm md:text-base leading-relaxed">
-                                    My journey into data didn’t begin with code alone, it grew from a deep love for storytelling.
-                                    Through singing and music, I learned how patterns, rhythm, and emotion come together to create meaning.
-                                    Data, to me, works the same way. "Every dataset carries a story, and my role is to uncover it with clarity and intention."
-                                    <br /><br />
-                                    Beyond work, I’m fueled by curiosity; exploring new places, music, movement, conversations, and ideas.
-                                    These experiences shape how I think, analyze, and solve problems, and they constantly remind me that the most meaningful insights come from understanding context, not just numbers.
-                                    <br /><br />
+                                    My journey into AI didn't begin with algorithms — it grew from a deep love
+                                    for understanding patterns and meaning. Through music, I learned how rhythm,
+                                    emotion, and structure come together to tell stories. Machine learning, to me,
+                                    works the same way.
+                                    <br/><br/>
+                                    Beyond work, I'm fueled by curiosity: exploring new places, ideas, and
+                                    conversations. These experiences remind me that the most powerful AI systems
+                                    are built by people who deeply understand the humans they're built for.
+                                    <br/><br/>
                                     <span className="text-[#3360a3] font-semibold">
-                                        To me, data is more than numbers — "it’s a way to create clarity, uncover truth, and inspire confident decisions."
+                                        "Every signal holds a story. My role is to build the systems that listen
+                                        — and act on it."
                                     </span>
                                 </p>
                             </div>
@@ -199,7 +194,17 @@ const Home = () => {
                                 </h5>
 
                                 <p className="text-gray-600 text-sm md:text-base leading-relaxed">
-                                    I’m a Data Engineer with 4.5+ years of experience building scalable data platforms and analytics solutions across financial services and enterprise environments. I design end-to-end ETL pipelines, cloud data warehouses, and analytics-ready datasets using <b>Python, SQL, Spark, Azure, AWS, DBT, and Airflow</b>, and bridge data engineering with advanced analytics like <b>EDA, feature engineering, anomaly detection, forecasting, and KPI storytelling</b> to drive real business impact.
+                                    I'm an <b>AI/ML Engineer</b> with 5+ years of experience building intelligent systems
+                                    across enterprise networking, financial services, and cloud environments.
+                                    <br/>
+                                    Currently at Cisco, I design agentic AI assistants, predictive maintenance
+                                    models, and anomaly detection pipelines using{" "}
+                                    <b>LangChain, RAG, LLMs, LSTM, and TensorFlow</b> — deployed at scale with
+                                    Docker, Kubernetes, and MLflow. <br/>
+                                    <br/>
+                                    "I bridge data engineering and AI, owning
+                                    end-to-end workflows from raw telemetry to{" "}
+                                    production-ready intelligent systems."
                                 </p>
                             </div>
                         </div>
@@ -243,15 +248,16 @@ const Home = () => {
                                 Vasavi Krishna Chintamaneni
                             </h2>
                             <p className="text-sm mb-2 text-red-900">
-                                Central Michigan University | Mount Pleasant, MI | Computer Science Graduate | Rooted From Hyderabad, India.
+                                AI/ML Engineer @ Cisco | CMU Computer Science | Richardson, TX | Rooted From Hyderabad, India.
                             </p>
                             <span className="text-md font-medium text-gray-700">
                                 <Typewriter
                                     words={[
-                                        "Data Engineer",
-                                        "Specialized in Analytics & BI",
+                                        "AI/ML Engineer @ Cisco",
+                                        "Building Agentic AI Systems",
+                                        "LLM Fine-Tuning & RAG Pipelines",
+                                        "MLOps & Production AI Deployment",
                                         "Storyteller with a passion for insights!",
-                                        "React Enthusiast!",
                                     ]}
                                     loop={0}
                                     cursor
