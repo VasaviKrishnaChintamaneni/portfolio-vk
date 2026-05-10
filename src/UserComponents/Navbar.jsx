@@ -7,6 +7,7 @@ import {
   FaProjectDiagram,
   FaAward,
   FaUser,
+  FaBook,
 } from "react-icons/fa";
 import ProfileBrandLogo from "../Assets/ProfilePic/ProfileBrandLogo.jpg";
 
@@ -33,6 +34,7 @@ const Navbar = () => {
         id: "certifications",
         icon: <FaAward />,
       },
+      { label: "Publications", href: "#publications", id: "publications", icon: <FaBook /> },
       { label: "Contact", href: "#contact", id: "contact", icon: <FaEnvelope /> },
     ],
     []
@@ -97,7 +99,7 @@ const Navbar = () => {
 
           {/* Desktop center links (Skills/Projects/Certifications like your original layout) */}
           <div className="hidden md:flex items-center space-x-3">
-            {navItems.slice(1, 4).map((item) => (
+            {navItems.slice(1, 5).map((item) => (
               <a
                 key={item.href}
                 href={item.href}

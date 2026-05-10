@@ -9,6 +9,7 @@ import Skills from "./pages/Skills";
 import Projects from "./pages/Projects";
 import MyCertifications from "./pages/MyCertifications";
 import Contact from "./pages/Contact";
+import Publications from './pages/Publications';
 
 function App() {
   return (
@@ -30,6 +31,10 @@ function App() {
 
         <section id="certifications">
           <MyCertifications />
+        </section>
+
+        <section id="publications">
+          <Publications />
         </section>
 
         <section id="contact">
