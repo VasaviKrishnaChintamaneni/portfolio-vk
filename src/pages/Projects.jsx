@@ -34,7 +34,7 @@ const Projects = () => {
         "Implemented dynamic chunking, top-k retrieval optimization, and contextual memory for deterministic, grounded responses",
         "Deployed at scale across distributed enterprise network environments using containerized FastAPI services",
       ],
-      github: "",
+      github: "https://github.com/VasaviKrishnaChintamaneni/agentic-network-troubleshooting",
       demo: "",
     },
 
@@ -58,7 +58,7 @@ const Projects = () => {
         "Minimized false positives through hybrid LSTM-Attention architecture on multivariate telemetry streams",
         "Deployed in GPU-enabled environments for real-time threat detection and operational visibility",
       ],
-      github: "",
+      github: "https://github.com/VasaviKrishnaChintamaneni/network-traffic-anomaly-detection",
       demo: "",
     },
 
@@ -81,7 +81,7 @@ const Projects = () => {
         "Reduced GPU memory usage significantly through 4-bit quantization with LoRA/QLoRA techniques",
         "Trained on curated network incident tickets and resolution logs for accurate root-cause language understanding",
       ],
-      github: "",
+      github: "https://github.com/VasaviKrishnaChintamaneni/domain-adaptive-llm-finetuning",
       demo: "",
     },
 
@@ -106,7 +106,7 @@ const Projects = () => {
         "Tracked model performance, data drift, and concept drift using MLflow in production environments",
         "Reduced reactive incident escalations through actionable insights derived from statistical feature engineering",
       ],
-      github: "",
+      github: "https://github.com/VasaviKrishnaChintamaneni/predictive-maintenance-network-infra",
       demo: "",
     },
   ];
